@@ -1,33 +1,34 @@
 <?php
 declare (strict_types=1);
 
+// Inkludera gemensamma funktioner
 require_once "funktioner.php";
-//läs indata och sanera
 
-//kontrollera metod
-if ($_SERVER['REQUEST_METHOD']!=='POST'){
+// Läs indata och sanera
+// Kontrollera metod
+if ($_SERVER['REQUEST_METHOD']!=='POST') {
     $error=new stdClass();
-    $error->meddelande=["wrong method", "sidan ska anropas med POST"];
+    $error->meddelande=["Wrong method", "Sidan ska anropas med POST"];
     skickaJSON($error, 405);
 }
 
-// läs indata
+// Läs indata
 $vara=filter_input(INPUT_POST, 'vara', FILTER_SANITIZE_SPECIAL_CHARS);
-if(!isset($vara) || mb_strlen($vara)>50){
+if(!isset($vara) || mb_strlen($vara)>50) {
     $error=new stdClass();
-    $error->meddelande=["bad input", "Parametern 'vara' saknas eller är mer än 50 tecken"];
+    $error->meddelande=["Bad input", "Parametern 'vara' saknas eller är för lång (max 50 tecken)"];
     skickaJSON($error, 400);
 }
 
-//koppla mot databas
+// Koppla mot databas
 $db=connectDB();
 
-//spara data
+// Spara data
 $sql="INSERT INTO varor (namn) VALUES (:vara)";
 $stmt=$db->prepare($sql);
 
 $stmt->execute(['vara'=>$vara]);
 $id=$db->lastInsertId();
 
-//skicka tillbaka svar
+// Skicka tillbaka svar
 skickaJSON(['id'=>$id]);

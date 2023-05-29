@@ -3,11 +3,11 @@ declare (strict_types=1);
 
 require_once "funktioner.php";
 
-// Koppla mot databasen
-$db = connectDb();
+// Koppla mot databasen 
+$db=connectDB();
 
 // Hämta data
-$sql="SELECT id, name, checked FROM varor";
+$sql="SELECT id, namn, checked FROM varor";
 $stmt=$db->query($sql);
 
 $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);

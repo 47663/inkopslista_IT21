@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/lista.js"></script>
+    <script src="js/varor.js"></script>
 
     <title>Lista</title>
 </head>
@@ -20,41 +21,8 @@
             <button type="button" id="varabutton">Lägg till</button>
         </form>
         <table class="table">
-            <tr><th></th><th>Vara</th><th><th></th></th></tr>
-            
-            <!-- DUMMY DATA DELETE AFTER JS-->
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Mjölk</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Smör</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td></td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Korv</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Ägg</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            
-            <!-- DUMMY DATA DELETE AFTER JS-->
+            <tbody id="varatable"></tbody>
+
         </table>
         <div id="deletebuttons">
             <button type="button" id="allabutton">Radera Alla</button>
