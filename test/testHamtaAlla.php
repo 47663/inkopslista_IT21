@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 try {
     // Skapa ett "handle" till cUrl för att läsa svaret från angiven sida
-    $ch = curl_init('http://localhost/inkopslista/php/hamtaAlla.php');
+    $ch = curl_init('http://localhost/miniproj/php/hamtaAlla.php');
     //return the transfer as a string
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 

@@ -4,7 +4,7 @@ require_once "../php/funktioner.php";
 
 try {
     // Skapa handle till cUrl för att läsa svaret
-    $ch = curl_init('http://localhost/inkopslista/php/uppdateraVara.php');
+    $ch = curl_init('http://localhost/miniproj/php/uppdateraVara.php');
 
     // Se till att vi får svaret som en sträng
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
